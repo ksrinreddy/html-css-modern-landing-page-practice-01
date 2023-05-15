@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --h-btnColor: white;
+    --h-btnbgColor: orange;
+    --h-containerbgColor: lightgray;
+    --spacer: 1em;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.spacing>*+* {
+    margin-top: var(--spacer);
+}
+
+/* hero */
+.h-container {
+    padding: 20px;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+        url("./images/heroshoe.jpeg") center/cover fixed no-repeat;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-title {
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: orange;
+}
+
+.hero-text {
+    color: white;
+    line-height: 1.2;
+}
+
+.btn {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--h-btnColor, white);
+    background: var(--h-btnbgColor, orange);
+    display: inline-block;
+    padding: 0.3em 1.25em;
+    border-radius: .25em;
+    transition: all .4s;
+
+}
+
+.btn:hover,
+.btn:focus {
+    transform: scale(1.1);
+    background: darkorange;
+}
+
+/* featured-products */
+
+.featured {
+    background: lightgray;
+}
+
+.fp-container {
+    padding: 4em 1.5em;
+}
+
+
+.section-title {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 2.5rem;
+    color: purple;
+    line-height: 1;
+    margin-bottom: 1em;
+}
+
+.split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+
+.featured-img {
+    max-width: 100%;
+    min-width: 170px;
+    width: 13em;
+    border-radius: 50%;
+    border: 0.1em solid lightseagreen;
+}
+
+.featured-item {
+    transform: scale(0.9);
+    transition: all 0.25s;
+    text-decoration: none;
+    text-align: center;
+    color: peru;
+    line-height: 1.3;
+}
+
+.price {
+    display: block;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+
+.featured-item:hover,
+:focus {
+    transform: scale(1);
+}
+
+.featured-details {
+    opacity: 0;
+    transition: all 0.25s;
+}
+
+.featured-item:hover .featured-details,
+.featured-itme:focus .featured-details {
+    opacity: 1;
+}
+
+/* our products */
+
+.op-container {
+    padding: 4em 1.5em;
+}
+
+.our-products-item {
+    display: flex;
+    flex-direction: column;
+    padding: 2em 1.5em;
+    margin-bottom: 1em;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-content {
+    justify-content: center;
+    line-height: 1.3;
+}
+
+.our-product-img {
+    max-width: 100%;
+    width: 13em;
+    min-width: 150px;
+    justify-content: center;
+}
+
+.product-heading {
+    text-transform: uppercase;
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.shoe-white {
+    background: radial-gradient(#90ee90, #20b2aa);
+}
+
+.shoe-green {
+    background: radial-gradient(#a1a1fb, #7272e9);
+}
+
+.shoe-red {
+    background: radial-gradient(#aff282, #23d403);
+}
+
+
+
+/* media queries */
+
+@media screen and (min-width:768px) {
+
+    .our-products-item {
+        flex-direction: row-reverse;
+    }
+
+    .container-img {
+        padding: 1em;
+        flex-basis: 1;
+    }
+
+    .our-product-img {
+        max-width: 100%;
+        width: 70%;
+        min-width: 13em;
+    }
+
+    .container-content {
+        text-align: left;
+        flex-basis: 2;
+    }
+}
